@@ -686,10 +686,10 @@ button {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*.is-hidden {
+.is-hidden {
   opacity: 0;
   pointer-events: none;
-}*/
+}
 
 .is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.7);
@@ -754,12 +754,22 @@ button {
   margin-bottom: 12px;
 }
 
+.order__input-field {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
 .order__label {
+  display: block;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
-  margin: 0px auto 4px 0;
+}
+
+.order__label-comment {
+  margin: 0 auto 4px 0;
 }
 
 .order__input {
@@ -768,6 +778,21 @@ button {
   width: 100%;
   height: 40px;
   padding-left: 42px;
+  color: #000000;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order__input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.order__input:focus + .order__icon {
+  fill: var(--accent-color);
+}
+
+.order__wrapper {
+  position: relative;
 }
 
 .order__comment {
@@ -778,6 +803,13 @@ button {
   resize: none;
   margin-bottom: 20px;
   padding: 12px 16px;
+  color: #000000;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order__comment:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .order__comment::placeholder {
@@ -787,31 +819,50 @@ button {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.order__wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
-}
 .order__icon {
   position: absolute;
   fill: var(--title-color);
   top: 50%;
   left: 12px;
-}
-
-.order__fieldset {
-  border: none;
-  text-align: center;
-}
-
-.order__checkbox {
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+  margin-bottom: 30px;
+}
+
+.order__text::before {
+  display: block;
+  content: '';
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-color);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 7px;
+}
+
+.order__checkbox {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order__checkbox:checked + .order__text::before {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  background-image: url(../images/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  outline: none;
 }
 
 .order__link {
