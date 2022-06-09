@@ -552,6 +552,7 @@ button {
 .footer__wrapper {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .footer__logo {
@@ -582,10 +583,6 @@ button {
 }
 .address__link--geo {
   color: var(--primary-color);
-}
-
-.follow__wrapper {
-  margin-left: 82px;
 }
 
 .follow__title {
@@ -626,10 +623,6 @@ button {
   fill: currentColor;
 }
 
-.subscribe {
-  margin-left: 98px;
-}
-
 .subscribe__title {
   display: block;
   font-weight: 700;
@@ -642,7 +635,7 @@ button {
 }
 
 .subscribe__input {
-  min-width: 355px;
+  min-width: 358px;
   height: 50px;
   padding-left: 16px;
   background-color: transparent;
