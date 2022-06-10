@@ -679,10 +679,10 @@ button {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden {
+/*.is-hidden {
   opacity: 0;
   pointer-events: none;
-}
+}*/
 
 .is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.7);
@@ -747,14 +747,10 @@ button {
   margin-bottom: 12px;
 }
 
-.order__input-field {
-  margin-bottom: 10px;
-  width: 100%;
-}
-
 .order__label {
   display: block;
-  margin-bottom: 4px;
+  align-self: flex-start;
+
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -772,6 +768,7 @@ button {
   height: 40px;
   padding-left: 42px;
   color: #000000;
+
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -786,6 +783,9 @@ button {
 
 .order__wrapper {
   position: relative;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
 .order__comment {
@@ -841,11 +841,9 @@ button {
   border-radius: 2px;
   cursor: pointer;
   margin-right: 7px;
-}
-
-.order__checkbox {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order__checkbox:checked + .order__text::before {
@@ -856,6 +854,10 @@ button {
   background-size: contain;
   background-position: center center;
   outline: none;
+}
+
+.order__checkbox:focus + .order__text::before {
+  outline: 2px solid rgba(33, 150, 243, 0.5);
 }
 
 .order__link {
